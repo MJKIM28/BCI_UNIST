@@ -1,2 +1,0 @@
-# BCI_UNIST
-help!
