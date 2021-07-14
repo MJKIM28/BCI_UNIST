@@ -1,0 +1,43 @@
+0. P300_processing
+input: signal, trigger, parameter 
+output: output_class, parameter
+
+1. Preprocessing 김민주, 최윤주
+input: signal, trigger, parameter
+output: signal, trigger, parameter
+
+signal [double] : time x channel 
+trigger [double]: time x 1
+
+
+2. Epoching 정미영
+input: signal, trigger, parameter
+output: epoch, parameter
+
+signal [double]: time x channel
+trigger [double]: time x 1
+epoch [structure]:  
+
+3. Feature (다같이)
+input: epoch, parameter
+output: feature, label, parameter
+
+4. Classification 김종수, 허도진  
+input: feature, label, parameter
+output: output_class, parameter
+
+feature[double] :observation x variable
+label: observation x 1
+
+* parameter [structure]
+param.prep
+param.epoc
+	param.epoc.baseline
+	param.epoc.epoc
+param.feat
+param.mdl
+	param.mdl.mode ["training"/"testing"]
+param.sub
+param.exp
+	param.exp.target
+	param.exp.Fs
